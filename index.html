@@ -155,7 +155,7 @@
           <p class="hero-lead">A calm, confidential space for adults, couples and families — in person at <a href="https://www.vitameaclinic.com/" target="_blank" rel="noopener">Vita Mea Clinic</a>.</p>
           <div class="d-flex flex-wrap justify-content-center gap-3">
             <a href="https://www.vitameaclinic.com/contact" class="btn-get-started" target="_blank" rel="noopener">Book at Vita Mea</a>
-            <a href="https://www.youtube.com/watch?v=dcqQzQ8Enh4&amp;t=22s" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+            <a href="https://www.youtube.com/watch?v=dcqQzQ8Enh4&amp;t=22s" class="btn-watch-video d-flex align-items-center js-video-modal" data-youtube-id="dcqQzQ8Enh4" data-start="22"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
             <a href="about.html" class="btn-watch-video d-flex align-items-center"><span>Meet Isabel</span></a>
           </div>
         </div>
@@ -509,6 +509,14 @@
       </div>
     </div>
   </footer>
+
+  <div id="video-modal" class="video-modal" hidden>
+    <div class="video-modal-backdrop" data-close-video></div>
+    <div class="video-modal-dialog" role="dialog" aria-modal="true" aria-label="Isabel Camilleri video">
+      <button type="button" class="video-modal-close" data-close-video aria-label="Close video"><i class="bi bi-x-lg"></i></button>
+      <div class="video-modal-frame"></div>
+    </div>
+  </div>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center" aria-label="Back to top"><i class="bi bi-arrow-up-short"></i></a>
   <div id="preloader"></div>

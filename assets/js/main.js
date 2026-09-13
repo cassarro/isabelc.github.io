@@ -106,21 +106,45 @@
    * Initiate glightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox',
-    plyr: {
-      css: 'https://cdn.plyr.io/3.6.12/plyr.css',
-      js: 'https://cdn.plyr.io/3.6.12/plyr.js',
-      config: {
-        youtube: {
-          noCookie: true,
-          rel: 0,
-          showinfo: 0,
-          iv_load_policy: 3,
-          start: 22
-        }
-      }
-    }
+    selector: '.glightbox'
   });
+
+  const videoModal = document.getElementById('video-modal');
+  const videoFrame = videoModal ? videoModal.querySelector('.video-modal-frame') : null;
+
+  function closeVideoModal() {
+    if (!videoModal || !videoFrame) {
+      return;
+    }
+    videoFrame.innerHTML = '';
+    videoModal.hidden = true;
+    document.body.classList.remove('video-modal-open');
+  }
+
+  document.querySelectorAll('.js-video-modal').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      if (!videoModal || !videoFrame) {
+        return;
+      }
+      event.preventDefault();
+      const id = link.dataset.youtubeId;
+      const start = Number(link.dataset.start || 0);
+      videoFrame.innerHTML = `<iframe src="https://www.youtube.com/embed/${id}?start=${start}&autoplay=1&rel=0" title="Isabel Camilleri video" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>`;
+      videoModal.hidden = false;
+      document.body.classList.add('video-modal-open');
+    });
+  });
+
+  if (videoModal) {
+    videoModal.querySelectorAll('[data-close-video]').forEach((el) => {
+      el.addEventListener('click', closeVideoModal);
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && !videoModal.hidden) {
+        closeVideoModal();
+      }
+    });
+  }
 
   /**
    * Frequently Asked Questions Toggle
