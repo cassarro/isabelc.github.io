@@ -1,6 +1,5 @@
-Thanks for downloading this template!
+Isabel Camilleri — personal counselling site
+https://www.isabelcamilleri.com/
 
-Template Name: QuickStart
-Template URL: https://bootstrapmade.com/quickstart-bootstrap-startup-website-template/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+Static GitHub Pages site. Appointments are booked through Vita Mea Clinic:
+https://www.vitameaclinic.com/
