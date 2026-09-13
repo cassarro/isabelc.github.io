@@ -106,7 +106,20 @@
    * Initiate glightbox
    */
   const glightbox = GLightbox({
-    selector: '.glightbox'
+    selector: '.glightbox',
+    plyr: {
+      css: 'https://cdn.plyr.io/3.6.12/plyr.css',
+      js: 'https://cdn.plyr.io/3.6.12/plyr.js',
+      config: {
+        youtube: {
+          noCookie: true,
+          rel: 0,
+          showinfo: 0,
+          iv_load_policy: 3,
+          start: 22
+        }
+      }
+    }
   });
 
   /**
